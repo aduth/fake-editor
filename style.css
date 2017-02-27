@@ -1,0 +1,76 @@
+/**
+ * Theme Name: Fake Editor
+ * Description: Simulates the wp-admin post editor for unauthenticated users
+ * Author Name: Andrew Duthie
+ * Author URI: http://andrewduthie.com
+ */
+
+body {
+	margin: 0;
+}
+
+.toolbar,
+.sidebar {
+	background-color: #23282d;
+}
+
+.toolbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 32px;
+	z-index: 99999;
+}
+
+.sidebar,
+.metadata {
+	position: fixed;
+	top: 32px;
+	bottom: 0;
+}
+
+.sidebar {
+	left: 0;
+	width: 160px;
+}
+
+.metadata {
+	right: 0;
+	width: 280px;
+	border-left: 1px solid #e1e5e9;
+}
+
+.sidebar__selected {
+	position: relative;
+	height: 34px;
+	margin-top: 45px;
+	background-color: #0073aa;
+}
+
+.sidebar__selected::after {
+	content: '';
+	position: absolute;
+	top: 50%;
+	right: 0;
+	margin-top: -8px;
+	height: 0;
+	width: 0;
+	border: 8px solid transparent;
+	pointer-events: none;
+	border-right-color: #fff;
+}
+
+.sidebar__selected-submenu {
+	background-color: #32373c;
+	height: 122px;
+}
+
+.content {
+	margin: 32px 280px 0 160px;
+	padding: 20px;
+}
+
+body.admin-bar .content {
+	margin-top: 0;
+}
